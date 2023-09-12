@@ -1,8 +1,11 @@
+import { RegisterUser } from "./components/RegisterUser"
+import { GlobalStyle } from "./styles/global"
 
 function App() {
   return (
     <div>
-      <h2>hotel</h2>
+      <RegisterUser />
+      <GlobalStyle />
     </div>
   )
 }
