@@ -13,10 +13,13 @@ export const Container = styled.form`
 
     h2{
         margin-bottom: 1.5rem;
+        text-align: center;
     }
     input{
         margin-bottom: 1rem;
         line-height: 1.2rem;
+        height: 2rem;
+        border:1px solid var(--primary-color);
     }
     button{
         padding: 1rem 2rem;
