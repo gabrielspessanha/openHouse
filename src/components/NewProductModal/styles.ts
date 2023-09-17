@@ -3,24 +3,25 @@ import { styled } from "styled-components";
 
 
 
-export const Container = styled.div`
-    background: var(--background-secondary);
+export const Content = styled.form`
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    padding: 2rem;
-    border-radius: 20px;
+    justify-content: center;
 
     h2{
         margin-bottom: 1.5rem;
         text-align: center;
     }
+
     input{
         margin-bottom: 1rem;
-        line-height: 1.2rem;
+        padding: 0 1.5rem;
         height: 2rem;
+        border-radius: 0.25rem;
+        background: #e7e9ee;
         border:1px solid var(--primary-color);
     }
+    
     button{
         padding: 1rem 2rem;
         background: var(--primary-color);
