@@ -1,7 +1,8 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Content } from "./styles";
 import { GrClose } from "react-icons/gr";
 import ReactModal from "react-modal"
+import { api } from "../services/api";
 
 
 ReactModal.setAppElement('#root')
@@ -10,13 +11,17 @@ ReactModal.setAppElement('#root')
 interface NewProductModalProps{
   isOpen: boolean;
   onRequestClose: () => void;
-
 }
 
 export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
-
+  const [products, setProducts] = useState([])
   const [productName, setProductName] = useState("")
-  const [amount, setAmount] = useState()
+  const [amount, setAmount] = useState<number | undefined>(undefined)
+
+  useEffect(()=> {
+    api.get('products')
+    .then(response => console.log(response.data))
+  }, [])
 
   function getRandomId() {
     return Math.floor(Math.random() * 1000000);
@@ -25,16 +30,19 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
   function createProduct(event: FormEvent){
     event.preventDefault()
 
-    const newProduct ={
+    const data ={
       id: getRandomId(),
       productName,
       amount
     }
 
-    console.log(newProduct)
+    api.post('products', data)
+    
+  
 
     setProductName("")
     setAmount(0)
+    onRequestClose
   }
     return(
       <ReactModal
@@ -47,7 +55,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
           <GrClose  />
 
         </button>
-        <Content>
+        <Content onSubmit={createProduct}>
           <h2>Cadastrar produto</h2>
           <label htmlFor="nameProduct">Nome do produto:</label>
           <input 

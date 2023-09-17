@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 286370,
+      "productName": "pão",
+      "amount": 2
+    },
+    {
+      "id": 505347,
+      "productName": "mortandela",
+      "amount": 2
+    },
+    {
+      "id": 389590,
+      "productName": "pão de batata",
+      "amount": 5
+    }
+  ],
+  "users": []
+}

@@ -14,9 +14,9 @@ interface NewProductModalProps{
 }
 
 export function RemoveProductModal({isOpen, onRequestClose}: NewProductModalProps){
-
-    const [idProductToRemove, setIdProductToRemove] = useState(0)
-    const [quantitiesToRemove, setQuantitiesToRemove] = useState(0)
+    
+    const [idProductToRemove, setIdProductToRemove] = useState<number | undefined>(undefined)
+    const [quantitiesToRemove, setQuantitiesToRemove] = useState<number | undefined>(undefined)
 
     function removeProduct(event: FormEvent){
         event.preventDefault()

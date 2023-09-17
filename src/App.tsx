@@ -5,6 +5,7 @@ import { NewProductModal } from "./components/NewProductModal"
 import { RegisterUser } from "./components/RegisterUser"
 import { GlobalStyle } from "./styles/global"
 import { RemoveProductModal } from "./components/RemoveProductModal"
+import { Products } from "./components/Products"
 
 
 
@@ -40,6 +41,11 @@ function App() {
           onOpenRemoveProductModal={handleOpenRemoveProductModal}
         />
         <Main />
+        <Products />
+
+
+
+
         <NewProductModal 
           isOpen={isNewProductModalOpen}
           onRequestClose={handleCloseNewRegisterModal}
