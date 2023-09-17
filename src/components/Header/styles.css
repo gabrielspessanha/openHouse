@@ -1,13 +1,23 @@
+.nav{
+    gap: .5rem;
+}
+
 .nav>*{
     font-family: 'Cormorant', serif;
     font-weight: 600;
     display: inline;
-    border-bottom: 1px solid transparent;
+    max-width: 8rem;
+    border: 1px solid transparent;
     transition: border-bottom .3s;
+    color: #FFF;
 }
 
 .nav>*:hover{
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #FFF;
+}
+
+.nav>svg{
+    color: #FFF;
 }
 
 

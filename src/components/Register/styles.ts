@@ -10,7 +10,6 @@ export const Container = styled.div`
     max-width: 400px;
     padding: 2rem;
     border-radius: 20px;
-    margin: 5rem auto;
 
     h2{
         margin-bottom: 1.5rem;

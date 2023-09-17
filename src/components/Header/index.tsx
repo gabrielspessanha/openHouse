@@ -10,7 +10,7 @@ import './styles.css';
 
 export function Header() {
   return (
-    <Navbar bg="transparent" data-bs-theme="light" expand="lg" className='navbar'>
+    <Navbar bg="transparent" data-bs-theme="dark" expand="lg" className='navbar'>
       <Container fluid className="container">
         <Navbar.Brand>
             <img
@@ -30,9 +30,11 @@ export function Header() {
             navbarScroll
           >
             <Nav.Link href="#action1">HOME</Nav.Link>
-            <NavDropdown title="PRODUTO" id="navbarScrollingDropdown">
+            <NavDropdown  title="PRODUTO" id="navbarScrollingDropdown">
+
               <NavDropdown.Item href="#action3">Novo produto</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Remover produto</NavDropdown.Item>
+
             </NavDropdown>
             <Nav.Link href="#action2">REGISTRAR</Nav.Link>
             <Nav.Link href="#action3">LOGIN</Nav.Link>

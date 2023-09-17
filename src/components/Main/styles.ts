@@ -1,14 +1,12 @@
 import { styled } from "styled-components";
 
-import background from '../../imgs/background.jpg';
+
 
 export const Container = styled.main`
     display: flex;
     place-content: center;
     align-items: center;
     height: 80vh;
-    background: url(${background}) no-repeat center center;
-    background-size: cover;
 
     .container{
         display: flex;
