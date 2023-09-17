@@ -4,7 +4,7 @@ import { GlobalStyle } from "./styles/global"
 function App() {
   return (
     <div>
-      <RegisterUser />
+      {/* <RegisterUser/> */}
       <GlobalStyle />
     </div>
   )

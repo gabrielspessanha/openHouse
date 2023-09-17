@@ -1,18 +1,34 @@
-import { useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Container } from "./styles";
 
-
+interface user {
+    name: string,
+    document: string,
+    tel: string
+}
 
 export function RegisterUser() {
+    const [users, setUsers] = useState<user[]>([])
+    const [name, setName] = useState('');
+    const [document, setDocument] = useState('');
+    const [tel, setTel] = useState('');
 
-    const [name, setName] = useState('')
-    const [document, setDocument] = useState('')
-    const [tel, setTel] = useState('')
+    useEffect(() => {
+    console.log(users);
+  }, [users]);
     
-    function createUser(ev){
-        ev.preventDefault()
+    function createUser(event : FormEvent){
+        event.preventDefault()
         alert('foi!')
 
+        const newUser ={
+            name,
+            document,
+            tel
+        }
+
+        setUsers([...users,newUser])
+        console.log(users)
         setName('')
         setDocument('')
         setTel('')
@@ -37,7 +53,8 @@ export function RegisterUser() {
                 type="text" 
                 required 
                 name="document" 
-                id="document" 
+                id="document"
+                placeholder="xxx.xxx.xxx-xx"
                 value={document}
                 onChange={(e)=> setDocument(e.target.value)}
             />
