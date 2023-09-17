@@ -1,6 +1,65 @@
 {
   "products": [
-    
+    {
+      "id": 133753,
+      "productName": "Bolo de chocolate",
+      "amount": 15,
+      "quantitie": 1
+    },
+    {
+      "id": 862870,
+      "productName": "Torta de morango",
+      "amount": 6,
+      "quantitie": 1
+    },
+    {
+      "id": 806475,
+      "productName": "Pão",
+      "amount": 0.5,
+      "quantitie": 1
+    },
+    {
+      "id": 388001,
+      "productName": "Queijo mussarela",
+      "amount": 3,
+      "quantitie": 1
+    },
+    {
+      "id": 404145,
+      "productName": "presunto",
+      "amount": 12,
+      "quantitie": 1
+    },
+    {
+      "id": 10293,
+      "productName": "Manteiga.",
+      "amount": 4.4,
+      "quantitie": 1
+    },
+    {
+      "id": 938286,
+      "productName": "pão frances",
+      "amount": 1.5,
+      "quantitie": 1
+    },
+    {
+      "id": 66773,
+      "productName": "Salgado",
+      "amount": 2.5,
+      "quantitie": 1
+    },
+    {
+      "id": 401621,
+      "productName": "Guaraná",
+      "amount": 6,
+      "quantitie": 1
+    },
+    {
+      "id": 363522,
+      "productName": "Coca-Cola",
+      "amount": 8,
+      "quantitie": 1
+    }
   ],
   "users": []
 }

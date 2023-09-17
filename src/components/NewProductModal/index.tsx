@@ -25,17 +25,16 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
     return Math.floor(Math.random() * 1000000);
   }
 
-  function createNewProduct(event: FormEvent){
+  async function createNewProduct(event: FormEvent){
     event.preventDefault()
 
-    createProduct({
+    await createProduct({
       id: getRandomId(),
       productName,
       amount,
       quantitie: 1
       
     })
-  
 
     setProductName("")
     setAmount(0)

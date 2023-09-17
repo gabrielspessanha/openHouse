@@ -1,9 +1,10 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../components/services/api";
-interface products {
+interface productsInput {
     id: number,
     productName: string,
     amount: number,
+    quantitie: number
 }
 
 interface ProductsProviderProps{
@@ -11,25 +12,32 @@ interface ProductsProviderProps{
 }
 
 interface ProductsContextData {
-    products: products[];
-    createProduct: (product: products) => void;
+    products: productsInput[];
+    createProduct: (productInput: productsInput) => Promise<void>;
 }
 
-export const ProductsContext = createContext<ProductsContextData>([])
+export const ProductsContext = createContext<ProductsContextData>(
+    {} as ProductsContextData
+)
 
 
 export function ProductsProvider({children}: ProductsProviderProps){
-    const [products, setProducts] = useState<products[]>([])
+    const [products, setProducts] = useState<productsInput[]>([])
 
     useEffect(()=> {
         api.get('products')
         .then((response) => setProducts(response.data))
+
+        setTimeout(()=>{
+            alert("Bem vindo a OpenHouse")
+        }, 5000)
       }, [])
 
     
-    function createProduct(product : products){
-          api.post('products', product)
-          
+    async function createProduct(productInput : productsInput){
+       const response = await  api.post('/products', productInput)
+
+       setProducts([...products, response.data])
     }
 
     return (
