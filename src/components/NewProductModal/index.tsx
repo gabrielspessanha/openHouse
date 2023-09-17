@@ -1,10 +1,11 @@
-import { FormEvent, useEffect, useState } from "react";
-import { Content } from "./styles";
-import { GrClose } from "react-icons/gr";
+import { FormEvent, useState, useContext } from "react";
 import ReactModal from "react-modal"
 import { api } from "../services/api";
+import { ProductsContext } from "../../contexts/useProducts";
 
+import { GrClose } from "react-icons/gr";
 
+import { Content } from "./styles";
 ReactModal.setAppElement('#root')
 
 
@@ -14,36 +15,33 @@ interface NewProductModalProps{
 }
 
 export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
-  const [products, setProducts] = useState([])
-  const [productName, setProductName] = useState("")
-  const [amount, setAmount] = useState<number | undefined>(undefined)
 
-  useEffect(()=> {
-    api.get('products')
-    .then(response => console.log(response.data))
-  }, [])
+  const { createProduct }= useContext(ProductsContext)
+  
+  const [productName, setProductName] = useState("")
+  const [amount, setAmount] = useState(0)
 
   function getRandomId() {
     return Math.floor(Math.random() * 1000000);
   }
 
-  function createProduct(event: FormEvent){
+  function createNewProduct(event: FormEvent){
     event.preventDefault()
 
-    const data ={
+    createProduct({
       id: getRandomId(),
       productName,
-      amount
-    }
-
-    api.post('products', data)
-    
+      amount,
+      quantitie: 1
+      
+    })
   
 
     setProductName("")
     setAmount(0)
     onRequestClose
   }
+
     return(
       <ReactModal
         isOpen={isOpen} 
@@ -55,7 +53,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
           <GrClose  />
 
         </button>
-        <Content onSubmit={createProduct}>
+        <Content onSubmit={createNewProduct}>
           <h2>Cadastrar produto</h2>
           <label htmlFor="nameProduct">Nome do produto:</label>
           <input 
@@ -76,7 +74,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
           />
                 
           
-          <button onClick={createProduct} type="submit">CADASTRAR</button>
+          <button onClick={createNewProduct} type="submit">CADASTRAR</button>
         </Content>
     </ReactModal>
     )

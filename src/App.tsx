@@ -6,6 +6,7 @@ import { RegisterUser } from "./components/RegisterUser"
 import { GlobalStyle } from "./styles/global"
 import { RemoveProductModal } from "./components/RemoveProductModal"
 import { Products } from "./components/Products"
+import { ProductsProvider } from "./contexts/useProducts"
 
 
 
@@ -35,7 +36,8 @@ function App() {
 
   
   return (
-    <div className="background-main">
+    <ProductsProvider>
+      <div className="background-main">
         <Header
           onOpenNewProductModal={handleOpenNewRegisterModal}
           onOpenRemoveProductModal={handleOpenRemoveProductModal}
@@ -55,7 +57,9 @@ function App() {
           onRequestClose={handleCloseRemoveProductModal}
         />
         <GlobalStyle />
-    </div>
+      </div>
+    </ProductsProvider>
+      
   )
 }
 
