@@ -1,17 +1,17 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import { LuShoppingBasket} from "react-icons/lu";
+import { TiShoppingCart } from "react-icons/ti";
 import logo from '../../imgs/logo.png';
+
+import './styles.css';
 
 export function Header() {
   return (
-    <Navbar bg="transparent" data-bs-theme="light" expand="lg">
-      <Container fluid>
+    <Navbar bg="transparent" data-bs-theme="light" expand="lg" className='navbar'>
+      <Container fluid className="container">
         <Navbar.Brand>
             <img
               alt=""
@@ -25,19 +25,19 @@ export function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="mx-auto my-2"
+            className="mx-auto my-2 nav"
             style={{ maxHeight: '120px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <NavDropdown title="Produto" id="navbarScrollingDropdown">
+            <Nav.Link href="#action1">HOME</Nav.Link>
+            <NavDropdown title="PRODUTO" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Novo produto</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Remover produto</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#action2">Cadastrar</Nav.Link>
-            <Nav.Link href="#action3">Login</Nav.Link>
+            <Nav.Link href="#action2">REGISTRAR</Nav.Link>
+            <Nav.Link href="#action3">LOGIN</Nav.Link>
           </Nav>
-          <a><LuShoppingBasket size={30} /> </a>
+          <a><TiShoppingCart size={30} /> </a>
         </Navbar.Collapse>
       </Container>
     </Navbar>

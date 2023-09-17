@@ -1,0 +1,13 @@
+.nav>*{
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+    display: inline;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .3s;
+}
+
+.nav>*:hover{
+    border-bottom: 1px solid;
+}
+
+
