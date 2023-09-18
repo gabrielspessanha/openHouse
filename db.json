@@ -15,8 +15,8 @@
     {
       "id": 806475,
       "productName": "Pão",
-      "amount": 3,
-      "quantitie": 2
+      "amount": 1.5,
+      "quantitie": 4
     },
     {
       "id": 388001,
@@ -27,8 +27,8 @@
     {
       "id": 404145,
       "productName": "presunto",
-      "amount": 3,
-      "quantitie": 6
+      "amount": 7,
+      "quantitie": 4
     },
     {
       "id": 938286,
@@ -43,10 +43,10 @@
       "quantitie": 1
     },
     {
-      "id": 276116,
-      "productName": "Pudim",
-      "amount": 4.5,
-      "quantitie": 3
+      "id": 420593,
+      "productName": "Torta de chocolate",
+      "amount": 4,
+      "quantitie": 2
     }
   ],
   "users": []

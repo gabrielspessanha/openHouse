@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 
 export const Content = styled.div`
     margin-top: 2rem;
+    height: 100vh;
     .search{
 
         label{

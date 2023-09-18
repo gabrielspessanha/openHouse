@@ -4,6 +4,7 @@ import styled from "styled-components";
 
  export const Content = styled.form`
     background: #f1f0ed;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -70,6 +71,5 @@ export const Container = styled.div`
     display: flex;
     justify-content:center;
     height: 100vh;
-    margin-top: 4rem;
 
 `

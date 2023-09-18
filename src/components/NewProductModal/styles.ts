@@ -8,6 +8,7 @@ export const Content = styled.form`
     flex-direction: column;
     justify-content: center;
 
+
     h2{
         margin-bottom: 1.5rem;
         text-align: center;
