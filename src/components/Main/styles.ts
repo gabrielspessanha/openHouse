@@ -30,22 +30,6 @@ export const Container = styled.main`
             font-size: 1rem;
             color: #FFF;
         }
-
-        button{
-            background: var(--primary-color);
-            border: 0;
-            margin-top: 1rem;
-            padding: .75rem 2rem;
-            transition: .3s;
-            font-weight: 600;
-
-            &:hover{
-                filter: brightness(.9);
-                transform: scale(1.1);
-            }
-        }
-
-
     }
     @media(max-width: 550px){
         .container{
