@@ -2,7 +2,23 @@ import { styled } from "styled-components";
 
 
 export const Content = styled.div`
+    margin-top: 2rem;
+    .search{
 
+        label{
+            color: #FFF;
+            margin-right: 2rem;
+        }
+        input{
+        margin-bottom: 1rem;
+        padding: 0 1.5rem;
+        height: 2rem;
+        border-radius: 0.25rem;
+        background: #e7e9ee;
+        border:1px solid var(--primary-color);
+        }
+    }
+    
     table{
         width: 100%;
         border-spacing: 0 .5rem;
