@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../components/services/api";
+import Alert from 'react-bootstrap/Alert';
 interface productsInput {
     id: number,
     productName: string,
@@ -23,14 +24,16 @@ export const ProductsContext = createContext<ProductsContextData>(
 
 export function ProductsProvider({children}: ProductsProviderProps){
     const [products, setProducts] = useState<productsInput[]>([])
+    const [showWelcomeAlert, setShowWelcomeAlert] = useState(true);
 
     useEffect(()=> {
         api.get('products')
         .then((response) => setProducts(response.data))
 
         setTimeout(()=>{
-            alert("Bem vindo a OpenHouse")
-        }, 5000)
+          setShowWelcomeAlert(false);
+        }, 5000);
+        
       }, [])
 
     
@@ -59,6 +62,11 @@ export function ProductsProvider({children}: ProductsProviderProps){
       }
     return (
         <ProductsContext.Provider value={{products, createProduct}}>
+            {showWelcomeAlert && (
+              <Alert className="alerts" variant="warning">
+                Bem-vindo à OpenHouse! plataforma de cadastro de produtos.
+              </Alert>
+            )}
             {children}
         </ProductsContext.Provider>
     )

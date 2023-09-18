@@ -89,6 +89,13 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    .alerts{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        text-align:center;
+    }
+
 
 `
 
