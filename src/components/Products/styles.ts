@@ -1,42 +1,50 @@
 import { styled } from "styled-components";
 
-import bgCard from '../../imgs/bg-card.png'
 
- const Container = styled.div`
-    margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10rem 0;
-    gap: 1rem;
+export const Content = styled.div`
+    margin-top: 10rem;
 
+    table{
+        width: 100%;
+        border-spacing: 0 .5rem;
 
-    .card{
-        background-color: rgba(0, 0, 0, 1.0);
-        background: #e7e9ee;
-        width: 330px;
-        padding: 1rem;
-        display: flex;
-        flex-direction:column;
-        justify-content: space-between;
-
-        cursor: pointer;
-        transition: transform .3s;
-        background: url(${bgCard}) no-repeat center center;
-        background-size:cover;
-        color: #FFF;
-
-
-        h3{
-            font-weight: 600;
-            color:  #f1f0ed;
+        th{
+            color: #969CB3;
+            font-weight: 400;
+            padding: 1rem 2rem;
+            text-align: left;
+            line-height: 2rem;
         }
 
-        &:hover{
-            transform: scale(1.06);
-            box-shadow: 2px 2px 5px black
+        td{
+            padding: 1rem 2rem;
+            border: 0;
+            background: #FFF;
+            color:  #969CB3;
+            
+
+            &:first-child{
+                color:#363F5F;
+            }
         }
+        
     }
 
+@media (max-width: 516px){
+
+    table{
+        width: 100%;
+
+        th{
+            padding: 1rem .1rem;
+            text-align: left;
+            line-height: 1.5rem;
+        }
+
+        td{
+            padding: .5rem .2rem;
+            font-size: .7rem;
+        }
+    }
+}
 `
-export default Container

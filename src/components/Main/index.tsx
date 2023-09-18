@@ -9,7 +9,6 @@ export function Main(){
              <p>BEST SELLING</p>
              <h1>OpenHouse</h1>
              <small>na categoria de alimentos de todos os tempos</small>
-             <Button>COMPRAR</Button>
             </div>
             
         </Container>

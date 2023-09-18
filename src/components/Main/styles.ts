@@ -17,16 +17,17 @@ export const Container = styled.main`
             color: #FFF;
             font-weight: 600;
             border-bottom: 2px solid #FFF;
+            font-size: 1.2rem;
         }
 
         h1{
             color: #FFF;
-            font-size: 4rem;
+            font-size: 6rem;
             font-weight: 600;
         }
         
         small{
-            font-size: .6rem;
+            font-size: 1rem;
             color: #FFF;
         }
 
@@ -45,6 +46,25 @@ export const Container = styled.main`
         }
 
 
+    }
+    @media(max-width: 550px){
+        .container{
+        
+        p{
+            font-size: 1rem;
+        }
+
+        h1{
+            color: #FFF;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        
+        small{
+            font-size: .7rem;
+            color: #FFF;
+        }
+    }
     }
 
 `
