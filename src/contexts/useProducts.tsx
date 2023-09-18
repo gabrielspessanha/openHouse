@@ -8,6 +8,11 @@ interface productsInput {
     quantitie: number
 }
 
+interface productToRemove{
+  id: number,
+  quantitie: number
+}
+
 interface ProductsProviderProps{
     children: ReactNode;
 }
@@ -15,12 +20,12 @@ interface ProductsProviderProps{
 interface ProductsContextData {
     products: productsInput[];
     createProduct: (productInput: productsInput) => Promise<void>;
+    removeProduct: (productInput: productsInput) => Promise<void>;
 }
 
 export const ProductsContext = createContext<ProductsContextData>(
     {} as ProductsContextData
 )
-
 
 export function ProductsProvider({children}: ProductsProviderProps){
     const [products, setProducts] = useState<productsInput[]>([])
@@ -60,8 +65,46 @@ export function ProductsProvider({children}: ProductsProviderProps){
           setProducts([...products, response.data]);
         }
       }
+
+      async function removeProduct(productInput: productToRemove) {
+        const productIndex = products.findIndex((product) => product.id === productInput.id);
+      
+        if (productIndex !== -1) {
+          const product = products[productIndex];
+      
+          if (productInput.quantitie >= product.quantitie) {
+            // Remove o produto do estado local
+            const updatedProducts = [...products];
+            updatedProducts.splice(productIndex, 1);
+            setProducts(updatedProducts);
+      
+            // Remove o produto do banco de dados
+            await api.delete(`/products/${product.id}`);
+          } else {
+            // Atualiza a quantidade do produto
+            const updatedProduct = {
+              ...product,
+              quantitie: product.quantitie - productInput.quantitie,
+            };
+      
+            // Cria uma cópia atualizada dos produtos
+            const updatedProducts = [...products];
+            updatedProducts[productIndex] = updatedProduct;
+      
+            // Atualiza o estado local
+            setProducts(updatedProducts);
+      
+            // Faz a chamada para a API para refletir a alteração no banco de dados
+            await api.put(`/products/${product.id}`, updatedProduct);
+          }
+        } else {
+          // Produto não encontrado
+          alert('Produto não encontrado');
+        }
+      }
+
     return (
-        <ProductsContext.Provider value={{products, createProduct}}>
+        <ProductsContext.Provider value={{products, createProduct, removeProduct}}>
             {showWelcomeAlert && (
               <Alert className="alerts" variant="warning">
                 Bem-vindo à OpenHouse! plataforma de cadastro de produtos.

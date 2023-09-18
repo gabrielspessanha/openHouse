@@ -28,24 +28,12 @@
       "id": 404145,
       "productName": "presunto",
       "amount": 3,
-      "quantitie": 12
+      "quantitie": 6
     },
     {
       "id": 938286,
       "productName": "pão frances",
       "amount": 1.5,
-      "quantitie": 1
-    },
-    {
-      "id": 66773,
-      "productName": "Salgado",
-      "amount": 2.5,
-      "quantitie": 1
-    },
-    {
-      "id": 401621,
-      "productName": "Guaraná",
-      "amount": 6,
       "quantitie": 1
     },
     {

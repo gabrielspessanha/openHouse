@@ -34,7 +34,7 @@ import styled from "styled-components";
         }
     }
     @media(max-width: 700px){
-        max-width: 250px;
+        max-width: 300px;
         padding: 1rem;
         border-radius: 20px;
 
@@ -68,5 +68,6 @@ export const Container = styled.div`
     display: grid;
     place-content: center;
     height: 70vh;
+    margin-top: 4rem;
 
 `

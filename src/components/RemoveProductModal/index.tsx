@@ -1,7 +1,8 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { Content } from './styles';
 import { GrClose } from "react-icons/gr";
 import ReactModal from "react-modal"
+import { ProductsContext } from "../../contexts/useProducts";
 
 
 ReactModal.setAppElement('#root')
@@ -15,11 +16,21 @@ interface NewProductModalProps{
 
 export function RemoveProductModal({isOpen, onRequestClose}: NewProductModalProps){
     
-    const [idProductToRemove, setIdProductToRemove] = useState<number | undefined>(undefined)
-    const [quantitiesToRemove, setQuantitiesToRemove] = useState<number | undefined>(undefined)
+    const { removeProduct }= useContext(ProductsContext)
 
-    function removeProduct(event: FormEvent){
+    const [idProductToRemove, setIdProductToRemove] = useState<number>()
+    const [quantitiesToRemove, setQuantitiesToRemove] = useState<number>()
+
+    async function removeNewProduct(event: FormEvent){
         event.preventDefault()
+
+        await removeProduct({
+          id: idProductToRemove,
+          quantitie: quantitiesToRemove
+        })
+
+        setIdProductToRemove('');
+        setQuantitiesToRemove('');
     }
 
     return(
@@ -33,7 +44,7 @@ export function RemoveProductModal({isOpen, onRequestClose}: NewProductModalProp
           <GrClose  />
         </button>
 
-        <Content>
+        <Content onSubmit={removeNewProduct}>
           <h2>Remover produto</h2>
           <label htmlFor="nameProduct">ID do produto:</label>
           <input 
@@ -54,7 +65,7 @@ export function RemoveProductModal({isOpen, onRequestClose}: NewProductModalProp
           />
                 
           
-          <button onClick={removeProduct} type="submit">Remover</button>
+          <button onClick={removeNewProduct} type="submit">Remover</button>
         </Content>
     </ReactModal>
     )
