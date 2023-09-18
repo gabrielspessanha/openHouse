@@ -1,6 +1,7 @@
 import { FormEvent, useState, useContext } from "react";
 import ReactModal from "react-modal";
 import { ProductsContext } from "../../contexts/useProducts";
+import Form from 'react-bootstrap/Form';
 
 import { GrClose } from "react-icons/gr";
 
@@ -19,6 +20,9 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
   
   const [productName, setProductName] = useState("")
   const [amount, setAmount] = useState(0)
+  const [quantitie, setQuantitie] = useState(0)
+
+  
 
   function getRandomId() {
     return Math.floor(Math.random() * 1000000);
@@ -31,8 +35,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
       id: getRandomId(),
       productName,
       amount,
-      quantitie: 1
-      
+      quantitie
     })
 
     setProductName("")
@@ -70,6 +73,15 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
             value={amount}
             onChange={(e)=> setAmount(Number(e.target.value))}
           />
+
+          <label htmlFor="quantities">Quantidade: </label>
+          <input 
+            type="number" 
+            id="quantities" 
+            required
+            value={quantitie}
+            onChange={(e)=> setQuantitie(Number(e.target.value))}
+          />  
                 
           
           <button onClick={createNewProduct} type="submit">CADASTRAR</button>

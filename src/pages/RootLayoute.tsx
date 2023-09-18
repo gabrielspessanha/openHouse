@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
 import { NewProductModal } from "../components/NewProductModal";
-import { GlobalStyle } from "../styles/global";
+import { GlobalStyle, MainContent } from "../styles/global";
 import { RemoveProductModal } from "../components/RemoveProductModal";
 import { useState } from "react";
 
@@ -29,7 +29,7 @@ export function RootLayoute(){
         setIsRemoveModalOpen(false)
         }
     return(
-        <>
+        <MainContent>
             <Header 
             onOpenNewProductModal={handleOpenNewRegisterModal}
             onOpenRemoveProductModal={handleOpenRemoveProductModal}
@@ -45,7 +45,7 @@ export function RootLayoute(){
                 onRequestClose={handleCloseRemoveProductModal}
             />
             <GlobalStyle />
-         </>
+         </MainContent>
     )
     
 }

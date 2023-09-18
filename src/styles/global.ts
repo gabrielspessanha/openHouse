@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
-import background from '../imgs/background.jpg';
+import backgroundMain from '../imgs/background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
     :root{
@@ -42,12 +42,6 @@ export const GlobalStyle = createGlobalStyle`
     [disabled]{
         opacity: 0.6;
         cursor: not-allowed;
-    }
-
-    .background-main{
-        background: url(${background}) no-repeat center center;
-        background-size:cover;
-        height: 100vh;
     }
 
     .react-modal-overlay{
@@ -96,4 +90,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 
+`
+
+export const MainContent = styled.div`
+        background-image: url(${backgroundMain});
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100vh;
 `

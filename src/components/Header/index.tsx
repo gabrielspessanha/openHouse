@@ -16,7 +16,7 @@ interface HeaderProps{
 export function Header({onOpenNewProductModal, onOpenRemoveProductModal}: HeaderProps) {
   
   return (
-    <Navbar bg="transparent" data-bs-theme="dark" fixed="top" expand="lg" className='navbar'>
+    <Navbar bg="transparent" data-bs-theme="dark" expand="lg" className='navbar'>
       <Container fluid className="container">
         <Navbar.Brand>
             <img

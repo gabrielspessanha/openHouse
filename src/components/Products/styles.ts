@@ -2,15 +2,15 @@ import { styled } from "styled-components";
 
 
 export const Content = styled.div`
-    margin-top: 10rem;
 
     table{
         width: 100%;
         border-spacing: 0 .5rem;
+        border-collapse: separate;
 
         th{
-            color: #969CB3;
-            font-weight: 400;
+            color: #FFF;
+            font-weight: 600;
             padding: 1rem 2rem;
             text-align: left;
             line-height: 2rem;
@@ -21,7 +21,7 @@ export const Content = styled.div`
             border: 0;
             background: #FFF;
             color:  #969CB3;
-            
+           
 
             &:first-child{
                 color:#363F5F;
