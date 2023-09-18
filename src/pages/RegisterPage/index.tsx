@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import { RegisterUser } from "../../components/RegisterUser";
 import { RegisterContainer } from "./styles";
 
