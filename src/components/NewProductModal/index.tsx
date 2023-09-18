@@ -1,7 +1,6 @@
 import { FormEvent, useState, useContext } from "react";
 import ReactModal from "react-modal";
 import { ProductsContext } from "../../contexts/useProducts";
-import Form from 'react-bootstrap/Form';
 
 import { GrClose } from "react-icons/gr";
 
