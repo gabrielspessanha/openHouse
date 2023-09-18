@@ -1,6 +1,7 @@
 import { createGlobalStyle, styled } from "styled-components";
 
 import backgroundMain from '../imgs/background.jpg';
+import background2 from '../imgs/background2.jpg';
 
 export const GlobalStyle = createGlobalStyle`
     :root{
@@ -106,9 +107,9 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const MainContent = styled.div`
-        background-image: url(${backgroundMain});
+        background-image: url(${backgroundMain}), url(${background2});
         background-size:cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 100vh;
+        height: 100%;
 `

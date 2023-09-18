@@ -6,7 +6,8 @@ import styled from "styled-components";
     background: #f1f0ed;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: 600px;
+    max-height: 370px;
     padding: 2rem;
     border-radius: 20px;
 
@@ -34,9 +35,10 @@ import styled from "styled-components";
         }
     }
     @media(max-width: 700px){
-        max-width: 300px;
-        padding: 1rem;
+        width: 300px;
+        padding: 2rem;
         border-radius: 20px;
+        height: 300px;
 
         h2{
             margin-bottom: 1rem;
@@ -65,9 +67,9 @@ import styled from "styled-components";
 
 `
 export const Container = styled.div`
-    display: grid;
-    place-content: center;
-    height: 70vh;
+    display: flex;
+    justify-content:center;
+    height: 100vh;
     margin-top: 4rem;
 
 `

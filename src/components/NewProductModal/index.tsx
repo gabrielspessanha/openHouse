@@ -18,8 +18,8 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
   const { createProduct }= useContext(ProductsContext)
   
   const [productName, setProductName] = useState("")
-  const [amount, setAmount] = useState(0)
-  const [quantitie, setQuantitie] = useState(0)
+  const [amount, setAmount] = useState<number>()
+  const [quantitie, setQuantitie] = useState<number>()
 
   
 

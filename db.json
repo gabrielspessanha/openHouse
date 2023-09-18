@@ -41,6 +41,12 @@
       "productName": "Coca-Cola",
       "amount": 8,
       "quantitie": 1
+    },
+    {
+      "id": 276116,
+      "productName": "Pudim",
+      "amount": 4.5,
+      "quantitie": 3
     }
   ],
   "users": []
