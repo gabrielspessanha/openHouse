@@ -7,6 +7,7 @@ import bgCard from '../../imgs/bg-card.png'
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10rem 0;
     gap: 1rem;
 
 
@@ -14,7 +15,7 @@ import bgCard from '../../imgs/bg-card.png'
         background-color: rgba(0, 0, 0, 1.0);
         background: #e7e9ee;
         width: 330px;
-        padding: 2rem;
+        padding: 1rem;
         display: flex;
         flex-direction:column;
         justify-content: space-between;
@@ -28,6 +29,7 @@ import bgCard from '../../imgs/bg-card.png'
 
         h3{
             font-weight: 600;
+            color:  #f1f0ed;
         }
 
         &:hover{

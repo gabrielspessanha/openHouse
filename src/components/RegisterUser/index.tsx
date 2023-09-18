@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import { Container } from "./styles";
+import  { Container, Content } from "./styles";
 
 interface user {
     name: string,
@@ -14,7 +14,7 @@ export function RegisterUser() {
     const [tel, setTel] = useState('');
 
     useEffect(() => {
-    console.log(users);
+        console.log(users)
   }, [users]);
     
     function createUser(event : FormEvent){
@@ -28,7 +28,6 @@ export function RegisterUser() {
         }
 
         setUsers([...users,newUser])
-        console.log(users)
         setName('')
         setDocument('')
         setTel('')
@@ -36,7 +35,8 @@ export function RegisterUser() {
 
 
     return(
-        <Container>
+        <Container className="container">
+            <Content>
             <h2>CADASTRO</h2>
             <label htmlFor="name">Nome:</label>
             <input 
@@ -72,6 +72,7 @@ export function RegisterUser() {
             />          
             
             <button onClick={createUser} type="submit">CADASTRAR</button>
+        </Content>
         </Container>
     )
 }

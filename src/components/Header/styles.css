@@ -3,15 +3,16 @@
 }
 
 .nav{
-    gap: .5rem;
+    gap: .7rem;
 }
 
 .nav>*{
     font-family: 'Cormorant', serif;
+    text-decoration: none;
     font-weight: 600;
-    display: inline;
     max-width: 8rem;
     border: 1px solid transparent;
+    align-self: center;
     transition: border-bottom .3s;
     color: #FFF;
 }
@@ -20,4 +21,9 @@
     border-bottom: 1px solid #FFF;
 }
 
+#navbarScrollingDropdown{
+    color: #FFF;
+    padding: 0 1rem;
+    border: 1px solid #FFF;
+}
 

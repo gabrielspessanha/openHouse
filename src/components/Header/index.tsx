@@ -6,17 +6,18 @@ import { TiShoppingCart } from "react-icons/ti";
 
 import logo from '../../imgs/logo.png';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 
 interface HeaderProps{
-  onOpenNewProductModal: () => void;
-  onOpenRemoveProductModal: () => void;
+  onOpenNewProductModal?: () => void;
+  onOpenRemoveProductModal?: () => void;
 }
 
 export function Header({onOpenNewProductModal, onOpenRemoveProductModal}: HeaderProps) {
   
   return (
-    <Navbar bg="transparent" data-bs-theme="dark" expand="lg" className='navbar'>
+    <Navbar bg="transparent" data-bs-theme="dark" fixed="top" expand="lg" className='navbar'>
       <Container fluid className="container">
         <Navbar.Brand>
             <img
@@ -35,15 +36,15 @@ export function Header({onOpenNewProductModal, onOpenRemoveProductModal}: Header
             style={{ maxHeight: '120px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">HOME</Nav.Link>
-            <NavDropdown  title="PRODUTO" id="navbarScrollingDropdown">
+            <Link to="/">HOME</Link>
+            <Link to="/register">REGISTRAR</Link>
+            <Link to="/products">PRODUTOS</Link>
+            <NavDropdown title="PRODUTO" id="navbarScrollingDropdown">
 
               <NavDropdown.Item onClick={onOpenNewProductModal}>Novo produto</NavDropdown.Item>
               <NavDropdown.Item onClick={onOpenRemoveProductModal}>Remover produto</NavDropdown.Item>
 
             </NavDropdown>
-            <Nav.Link href="#action2">REGISTRAR</Nav.Link>
-            <Nav.Link href="#action3">LOGIN</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

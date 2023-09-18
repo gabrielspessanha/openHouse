@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 
 
-export const Container = styled.form`
-    background: var(--background-secondary);
+ export const Content = styled.form`
+    background: #f1f0ed;
     display: flex;
     flex-direction: column;
     max-width: 400px;
     padding: 2rem;
     border-radius: 20px;
-    margin: 5rem auto;
 
     h2{
         margin-bottom: 1.5rem;
@@ -19,20 +18,26 @@ export const Container = styled.form`
         margin-bottom: 1rem;
         line-height: 1.2rem;
         height: 2rem;
-        border:1px solid var(--primary-color);
+        border:#f6d588;
     }
     button{
         padding: 1rem 2rem;
-        background: var(--primary-color);
+        background: #f6d588;
         border: none;
         border-radius: 5px;
         font-weight: 600;
-        color: var(--background);
+        color: #FFF;
         transition: filter .2s;
 
         &:hover{
             filter: brightness(.9);
         }
     }
+
+`
+export const Container = styled.div`
+    display: grid;
+    place-content: center;
+    height: 100vh;
 
 `

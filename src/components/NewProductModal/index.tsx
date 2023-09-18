@@ -38,7 +38,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
 
     setProductName("")
     setAmount(0)
-    onRequestClose
+    onRequestClose()
   }
 
     return(

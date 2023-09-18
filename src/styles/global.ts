@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     .background-main{
         background: url(${background}) no-repeat center center;
         background-size:cover;
-        height: 80vh;
+        height: 100vh;
     }
 
     .react-modal-overlay{
