@@ -14,7 +14,6 @@ export function RegisterUser() {
     const [tel, setTel] = useState('');
 
     useEffect(() => {
-        console.log(users)
   }, [users]);
     
     function createUser(event : FormEvent){
