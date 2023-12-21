@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
             index: true,
             element: <HomePage />
         },{
-            path: 'https://main--openhousepage.netlify.app/products',
+            path: 'products',
             element: <ProductsPage/>
         }]
     }

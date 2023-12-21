@@ -36,7 +36,7 @@ export function Header({onOpenNewProductModal, onOpenRemoveProductModal}: Header
             navbarScroll
           >
             <Link to="/">HOME</Link>
-            <Link to="/products">PRODUTOS</Link>
+            <Link to="products">PRODUTOS</Link>
             <NavDropdown title="PRODUTO" id="navbarScrollingDropdown">
 
               <NavDropdown.Item onClick={onOpenNewProductModal}>Novo produto</NavDropdown.Item>
