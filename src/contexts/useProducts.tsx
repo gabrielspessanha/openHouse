@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { api } from "../components/services/api";
 import Alert from 'react-bootstrap/Alert';
+
 interface productsInput {
     id: number,
     productName: string,
@@ -32,12 +32,15 @@ export function ProductsProvider({children}: ProductsProviderProps){
     const [showWelcomeAlert, setShowWelcomeAlert] = useState(true);
 
     useEffect(()=> {
-        api.get('products')
-        .then((response) => setProducts(response.data))
+        const existingProductsString = localStorage.getItem('products')
+
+        const existingProducts = existingProductsString? JSON.parse(existingProductsString): [];
+
+        setProducts(existingProducts)
 
         setTimeout(()=>{
           setShowWelcomeAlert(false);
-        }, 5000);
+        }, 3000);
         
       }, [])
 
@@ -47,6 +50,7 @@ export function ProductsProvider({children}: ProductsProviderProps){
     
         if (existingProductIndex !== -1) {
           const existingProduct = products[existingProductIndex];
+
           const updatedProduct = {
             ...existingProduct,
             quantitie: productInput.quantitie,
@@ -57,12 +61,20 @@ export function ProductsProvider({children}: ProductsProviderProps){
           updatedProducts[existingProductIndex] = updatedProduct;
     
           setProducts(updatedProducts);
-    
-    
-          await api.put(`/products/${existingProduct.id}`, updatedProduct);
-        } else {
-          const response = await api.post('/products', productInput);
-          setProducts([...products, response.data]);
+          localStorage.setItem('products', JSON.stringify(updatedProducts))
+        }else{
+          
+          const newProduct = {
+            id: Date.now(), 
+            productName: productInput.productName,
+            quantitie: productInput.quantitie,
+            amount: productInput.amount,
+          };
+      
+          const updatedProducts = [...products, newProduct];
+      
+          setProducts(updatedProducts);
+          localStorage.setItem('products', JSON.stringify(updatedProducts));
         }
       }
 
@@ -77,9 +89,8 @@ export function ProductsProvider({children}: ProductsProviderProps){
             const updatedProducts = [...products];
             updatedProducts.splice(productIndex, 1);
             setProducts(updatedProducts);
-      
-            // Remove o produto do banco de dados
-            await api.delete(`/products/${product.id}`);
+
+            localStorage.setItem('products', JSON.stringify(updatedProducts))
           } else {
             // Atualiza a quantidade do produto
             const updatedProduct = {
@@ -93,9 +104,8 @@ export function ProductsProvider({children}: ProductsProviderProps){
       
             // Atualiza o estado local
             setProducts(updatedProducts);
-      
-            // Faz a chamada para a API para refletir a alteração no banco de dados
-            await api.put(`/products/${product.id}`, updatedProduct);
+
+            localStorage.setItem('products', JSON.stringify(updatedProducts))
           }
         } else {
           // Produto não encontrado

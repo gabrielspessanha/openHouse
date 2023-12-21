@@ -9,6 +9,7 @@ export function Products() {
   const filteredProducts = products.filter((product) =>
     product.productName.toLowerCase().includes(productNameFilter.toLowerCase())
   );
+  console.log(products)
 
   return (
     <Content className="container">

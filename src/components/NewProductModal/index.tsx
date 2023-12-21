@@ -30,6 +30,9 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
   async function createNewProduct(event: FormEvent){
     event.preventDefault()
 
+    if(amount === undefined || quantitie === undefined){
+      return alert('preencha todas as informações')
+    }
     await createProduct({
       id: getRandomId(),
       productName,
@@ -38,7 +41,6 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
     })
 
     setProductName("")
-    setAmount(0)
     onRequestClose()
   }
 

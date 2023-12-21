@@ -36,7 +36,6 @@ export function Header({onOpenNewProductModal, onOpenRemoveProductModal}: Header
             navbarScroll
           >
             <Link to="/">HOME</Link>
-            <Link to="/register">REGISTRAR</Link>
             <Link to="/products">PRODUTOS</Link>
             <NavDropdown title="PRODUTO" id="navbarScrollingDropdown">
 
