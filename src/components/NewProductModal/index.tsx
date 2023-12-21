@@ -33,6 +33,7 @@ export function NewProductModal({isOpen, onRequestClose}: NewProductModalProps){
     if(amount === undefined || quantitie === undefined){
       return alert('preencha todas as informações')
     }
+    
     await createProduct({
       id: getRandomId(),
       productName,
