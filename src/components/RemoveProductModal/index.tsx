@@ -24,13 +24,14 @@ export function RemoveProductModal({isOpen, onRequestClose}: NewProductModalProp
     async function removeNewProduct(event: FormEvent){
         event.preventDefault()
 
+        if(idProductToRemove === undefined || quantitiesToRemove === undefined){
+          return alert('preencha todas as informações')
+        }
+
         await removeProduct({
           id: idProductToRemove,
           quantitie: quantitiesToRemove
         })
-
-        setIdProductToRemove('');
-        setQuantitiesToRemove('');
     }
 
     return(

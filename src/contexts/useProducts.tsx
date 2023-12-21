@@ -20,7 +20,7 @@ interface ProductsProviderProps{
 interface ProductsContextData {
     products: productsInput[];
     createProduct: (productInput: productsInput) => Promise<void>;
-    removeProduct: (productInput: productsInput) => Promise<void>;
+    removeProduct: (productInput: productToRemove) => Promise<void>;
 }
 
 export const ProductsContext = createContext<ProductsContextData>(
